@@ -20,8 +20,8 @@ public class EmployeeController {
 	@GetMapping(path="/emp")
 	public List<Employee> getEmployees(){
 		
-		EmployeeDao dao = new EmployeeDao();
-		return dao.getEmployees();
+		
+		return _manager.getEmployees();
 	}
 	
 	
