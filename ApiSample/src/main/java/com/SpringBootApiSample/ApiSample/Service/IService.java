@@ -9,7 +9,7 @@ import com.SpringBootApiSample.ApiSample.Entity.Employee;
 public interface IService {
 	List<Employee> getEmployees();
 	Employee getEmployeeById(int id);
-	EntityResponse<Employee> addEmployee(Employee employee);
+	boolean addEmployee(Employee employee);
 	EntityResponse<Employee> updateEmployee(Employee employee);
 	EntityResponse<Employee> deleteEmployee(Employee employee);
 }

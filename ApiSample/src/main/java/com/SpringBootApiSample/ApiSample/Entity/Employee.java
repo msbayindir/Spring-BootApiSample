@@ -24,7 +24,7 @@ import lombok.Setter;
 @Entity
 public class Employee {
 	
-	@NotBlank(message="id is null")
+//	@NotBlank(message="id is null")
 	private int id;
 	@NotBlank(message="name is not null")
 	private String Name;

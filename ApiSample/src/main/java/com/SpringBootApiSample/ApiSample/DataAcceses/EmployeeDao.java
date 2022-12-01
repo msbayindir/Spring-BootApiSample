@@ -3,10 +3,13 @@ package com.SpringBootApiSample.ApiSample.DataAcceses;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.function.EntityResponse;
 
 import com.SpringBootApiSample.ApiSample.Entity.Employee;
+
+import jakarta.validation.Valid;
 
 @Component
 public class EmployeeDao implements IEmployeeDao {
@@ -36,9 +39,11 @@ public class EmployeeDao implements IEmployeeDao {
 	}
 
 	@Override
-	public EntityResponse<Employee> addEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean addEmployee( Employee employee) {
+		employee.setId(++id);
+		if(employees.add(employee))return true;
+		
+		return false;
 	}
 
 	@Override

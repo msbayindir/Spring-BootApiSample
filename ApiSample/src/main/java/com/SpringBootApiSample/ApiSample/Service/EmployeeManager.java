@@ -32,9 +32,11 @@ public class EmployeeManager implements IService {
 	}
 
 	@Override
-	public EntityResponse<Employee> addEmployee(Employee employee) {
+	public boolean addEmployee(Employee employee) {
 		// TODO Auto-generated method stub
-		return null;
+		if(_empDao.addEmployee(employee))return true;
+		return false;
+		
 	}
 
 	@Override

@@ -10,7 +10,7 @@ public interface IEmployeeDao {
 
 	List<Employee> getEmployees();
 	Employee getEmployeeById(int id);
-	EntityResponse<Employee> addEmployee(Employee employee);
+	boolean addEmployee(Employee employee);
 	EntityResponse<Employee> updateEmployee(Employee employee);
 	EntityResponse<Employee> deleteEmployee(Employee employee);
 	
