@@ -31,7 +31,7 @@ public class EmployeeDao implements IEmployeeDao {
 	@Override
 	public Employee getEmployeeById(int id) {
 		// TODO Auto-generated method stub
-		Employee emp = employees.stream().filter(employee->employee.getId()==id).findFirst().get();
+		Employee emp = employees.stream().filter(employee->employee.getId()==id).findFirst().orElse(null);
 		return emp;
 	}
 

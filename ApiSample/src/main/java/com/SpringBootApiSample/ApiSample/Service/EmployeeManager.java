@@ -6,6 +6,7 @@ import org.springframework.web.servlet.function.EntityResponse;
 
 import com.SpringBootApiSample.ApiSample.DataAcceses.IEmployeeDao;
 import com.SpringBootApiSample.ApiSample.Entity.Employee;
+import com.SpringBootApiSample.ApiSample.Exception.UserNotFoundException;
 
 @Component
 public class EmployeeManager implements IService {
@@ -25,7 +26,9 @@ public class EmployeeManager implements IService {
 	@Override
 	public Employee getEmployeeById(int id) {
 		// TODO Auto-generated method stub
-		return _empDao.getEmployeeById(id);
+		Employee emp = _empDao.getEmployeeById(id);
+		if(emp==null)throw new UserNotFoundException("User Not Found");
+		return emp;
 	}
 
 	@Override
