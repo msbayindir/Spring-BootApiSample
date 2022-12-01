@@ -25,7 +25,7 @@ public class EmployeeManager implements IService {
 	@Override
 	public Employee getEmployeeById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return _empDao.getEmployeeById(id);
 	}
 
 	@Override
