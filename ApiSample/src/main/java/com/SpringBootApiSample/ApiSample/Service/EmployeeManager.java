@@ -2,13 +2,14 @@ package com.SpringBootApiSample.ApiSample.Service;
 
 import java.util.List;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.function.EntityResponse;
 
 import com.SpringBootApiSample.ApiSample.DataAcceses.IEmployeeDao;
 import com.SpringBootApiSample.ApiSample.Entity.Employee;
-import com.SpringBootApiSample.ApiSample.Exception.UserNotFoundException;
+import com.SpringBootApiSample.ApiSample.Exception.EmployeeNotFoundException;
 
-@Component
+@Service
 public class EmployeeManager implements IService {
 
 	private IEmployeeDao _empDao;
@@ -27,7 +28,7 @@ public class EmployeeManager implements IService {
 	public Employee getEmployeeById(int id) {
 		// TODO Auto-generated method stub
 		Employee emp = _empDao.getEmployeeById(id);
-		if(emp==null)throw new UserNotFoundException("User Not Found");
+		if(emp==null)throw new EmployeeNotFoundException("User Not Found");
 		return emp;
 	}
 
