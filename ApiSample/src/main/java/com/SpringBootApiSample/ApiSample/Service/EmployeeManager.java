@@ -9,6 +9,7 @@ import com.SpringBootApiSample.ApiSample.DataAcceses.IEmployeeDao;
 import com.SpringBootApiSample.ApiSample.Entity.Employee;
 import com.SpringBootApiSample.ApiSample.Exception.EmployeeNotFoundException;
 
+
 @Service
 public class EmployeeManager implements IService {
 
@@ -35,6 +36,10 @@ public class EmployeeManager implements IService {
 	@Override
 	public boolean addEmployee(Employee employee) {
 		// TODO Auto-generated method stub
+		
+		
+		
+		
 		if(_empDao.addEmployee(employee))return true;
 		return false;
 		
@@ -51,5 +56,6 @@ public class EmployeeManager implements IService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
